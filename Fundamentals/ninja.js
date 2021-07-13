@@ -29,3 +29,20 @@ class Ninja {
 // ninja1.drinkSake();
 // ninja1.showStats();
 
+class Sensei extends Ninja {
+    constructor(name, wisdom=10, health=200,strength=10, speed=10) {
+        super(name, health, speed, strength);
+        this.wisdom = wisdom;
+    }
+
+    speakWisdom() {
+        super.drinkSake();
+        console.log("I am wise");
+    }   
+}
+
+const superSensei = new Sensei("Master Splinter");
+superSensei.speakWisdom();
+// -> "What one programmer can do in one month, two programmers can do in two months."
+superSensei.showStats();
+// -> "Name: Master Splinter, Health: 210, Speed: 10, Strength: 10"
