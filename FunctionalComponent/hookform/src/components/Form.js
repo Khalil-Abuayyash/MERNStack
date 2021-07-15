@@ -7,9 +7,20 @@ const Form = () => {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
+    const createUser = (e) => {
+        e.preventDefault();
+        const newUser = {firstName, lastName, email, password};
+        setFirestName("");
+        setLastName("");
+        setEmail("");
+        setPassword("");
+        setConfirmPassword("");
+    }
+
     return (
         <div>
             <table>
+                <form onSubmit={createUser} ></form>
                 <tr>
                     <td>First Name:</td>
                     <td>
