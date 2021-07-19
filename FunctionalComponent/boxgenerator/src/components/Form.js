@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-
+import styles from './../styles/form.module.css';
 
 function Form(props) {
 
@@ -21,21 +21,26 @@ function Form(props) {
         setHeight(e.target.value);
     }
     const handleSubmit = (e) => {
-        props.addColor({color, number});
+        props.addBox({color, number, width, height});
         setColor("");
+        setWidth(0);
+        setHeight(0);
+        setNumber(0);
         e.preventDefault();
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit} >
-                Color:
-                <input type="text" value={color} onChange={handleColor} />
-                Number of new boxes:
-                <input type="number" value={number} onChange={handleNumber} />
+            <form onSubmit={handleSubmit}>
+                <label for="color" >Color:</label>
+                <input type="text" id="color" value={color} onChange={handleColor} />
+                <label for="number"  >Number of new boxes:</label>
+                <input type="number" id="number" value={number} onChange={handleNumber} />
+                <label for="width"  >Width:</label>
+                <input type="width" id="width" value={width} onChange={handleWidth} />
+                <label for="height"  >Height:</label>
+                <input type="height" id="height" value={height} onChange={handleHeight} />
                 <input type="submit" value="Add" />
             </form>
-        </div>
     )
 }
 

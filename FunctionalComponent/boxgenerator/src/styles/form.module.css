@@ -1,0 +1,14 @@
+form  {
+    display: flex;
+    flex-direction : column;
+    /* background-color: red; */
+    justify-content: center;
+    width: 970px;
+    margin: 0 auto;
+}
+
+form > * {
+    margin: 0 auto;
+    padding: 3px;
+    text-align: center;
+}

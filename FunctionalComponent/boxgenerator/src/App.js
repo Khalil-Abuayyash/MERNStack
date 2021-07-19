@@ -4,16 +4,16 @@ import React, {useState} from 'react';
 
 function App() {
 
-  const [colors, setColors] = useState([]);
+  const [boxes, setBoxes] = useState([]);
 
-  const addColor = (color) => {
-    setColors([...colors, color]);
+  const addBox = (box) => {
+    setBoxes([...boxes, box]);
   }
 
   return (
     <div className="App">
-      <Form addColor={addColor} />
-      <Divs colors={colors}/>
+      <Form addBox={addBox} />
+      <Divs boxes={boxes}/>
     </div>
   );
 }
