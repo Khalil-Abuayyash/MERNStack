@@ -1,0 +1,22 @@
+form {
+    display: flex;
+    margin: 0 auto;
+    width: 970px;
+    justify-content: space-evenly;
+}
+
+form > * {
+    margin: 3px;
+    padding: 10px;
+}
+
+.search {
+    background-color: blue;
+    width: fit-content;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+    text-decoration: none;
+}
