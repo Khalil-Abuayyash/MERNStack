@@ -15,12 +15,16 @@ function Main() {
         });
     }, [])
 
+    const removeFromDom = productId => {
+        setProducts(products.filter(product => product._id !== productId));
+    }
+
     return (
         <div>
             <ProductForm />
             <hr/>
             <h1>All Products:</h1>
-            {loaded && <ProductList products={products} />}
+            {loaded && <ProductList products={products} removeFromDom={removeFromDom} />}
         </div>
     )
 }
