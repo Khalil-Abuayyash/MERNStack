@@ -1,21 +1,17 @@
-import React,{useState} from 'react';
-import axios from 'axios';
+import React, {useState} from 'react'
 
-function ProductForm() {
-    const [title, setTitle] = useState("");
-    const [price, setPrice] = useState(0);
-    const [description, setDescription] = useState("");
+const Form = ({onSubmitProp, product}) => {
+    const [title, setTitle] = useState(product.title);
+    const [price, setPrice] = useState(product.price);
+    const [description, setDescription] = useState(product.description);
 
     const handleSubmit = e => {
         e.preventDefault();
-        axios.post('http://localhost:8000/api/products', {
-            title,
-            price,
-            description
-        })
-        .then(res => console.log(res.data))
-        .catch(err => console.log(err));
-    };
+        onSubmitProp({title, price, description});
+        setTitle("")
+        setPrice(0);
+        setDescription("");
+    }
 
     return (
         <form onSubmit={handleSubmit}>
@@ -39,7 +35,7 @@ function ProductForm() {
                         <td><input type="text" value={description} onChange={(e) => setDescription(e.target.value)} /></td>
                     </tr>
                     <tr>
-                        <td><input type="submit" value="Create a new Product" /></td>
+                        <td><input type="submit" value="Create/Edit a new Product" /></td>
                     </tr>
                 </tbody>
             </table>
@@ -47,4 +43,4 @@ function ProductForm() {
     )
 }
 
-export default ProductForm
+export default Form
